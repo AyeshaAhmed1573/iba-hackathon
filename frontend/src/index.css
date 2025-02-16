@@ -1,0 +1,8 @@
+@import "tailwindcss";
+body{
+  background: linear-gradient(to bottom left, #030712, #312e81, #881337);
+  background-repeat: no-repeat;
+  background-size: cover;
+   /* Ensures it covers the full viewport height */
+  width: 100%;
+}
