@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { collection, query, where, getDocs, addDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore';
 import { auth, db } from '../firebase';
 import AddScript from './Addscript';
-import ScriptList from './ScriptList';
+import ScriptList from './Scriptlist';
 import Layout from '../components/Layout';
 
 function Dashboard() {
