@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Spline from '@splinetool/react-spline';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../index.css';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { auth } from '../firebase';
@@ -11,6 +11,7 @@ function Signup() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [alert, setAlert] = useState({ message: '', type: '' }); // State for alerts
+  const navigate = useNavigate();
 
   const create = async (e) => {
     e.preventDefault();
@@ -32,7 +33,7 @@ function Signup() {
 
       // Redirect to login after 2 seconds
       setTimeout(() => {
-        window.location.href = '/login';
+        navigate('/login');
       }, 2000);
     } catch (error) {
       // Set error alert
