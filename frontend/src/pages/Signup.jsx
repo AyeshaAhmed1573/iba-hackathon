@@ -66,58 +66,60 @@ function Signup() {
             Create Account
           </h1>
 
-          {/* Name Inputs */}
-          <div className='flex flex-col sm:flex-row justify-between gap-4'>
-            <div className='w-full sm:w-1/2'>
-              <p className='text-gray-500 text-lg lg:text-xl'>First Name:</p>
+          <form onSubmit={create} className='flex flex-col justify-around'>
+            {/* Name Inputs */}
+            <div className='flex flex-col sm:flex-row justify-between gap-4'>
+              <div className='w-full sm:w-1/2'>
+                <p className='text-gray-500 text-lg lg:text-xl'>First Name:</p>
+                <input
+                  onChange={(e) => setFirstName(e.target.value)}
+                  type='text'
+                  className='w-full h-10 text-slate-100 shadow-md rounded-lg p-2 border border-gray-300 outline-none'
+                />
+              </div>
+              <div className='w-full sm:w-1/2'>
+                <p className='text-gray-500 text-lg lg:text-xl'>Last Name:</p>
+                <input
+                  onChange={(e) => setLastName(e.target.value)}
+                  type='text'
+                  className='w-full h-10 text-slate-100 shadow-md rounded-lg p-2 border border-gray-300 outline-none'
+                />
+              </div>
+            </div>
+
+            {/* Email Input */}
+            <div>
+              <p className='text-gray-500 text-lg lg:text-xl'>Email:</p>
               <input
-                onChange={(e) => setFirstName(e.target.value)}
-                type='text'
+                onChange={(e) => setEmail(e.target.value)}
+                type='email'
                 className='w-full h-10 text-slate-100 shadow-md rounded-lg p-2 border border-gray-300 outline-none'
               />
             </div>
-            <div className='w-full sm:w-1/2'>
-              <p className='text-gray-500 text-lg lg:text-xl'>Last Name:</p>
+
+            {/* Password Input */}
+            <div>
+              <p className='text-gray-500 text-lg lg:text-xl'>Password:</p>
               <input
-                onChange={(e) => setLastName(e.target.value)}
-                type='text'
+                onChange={(e) => setPassword(e.target.value)}
+                type='password'
                 className='w-full h-10 text-slate-100 shadow-md rounded-lg p-2 border border-gray-300 outline-none'
               />
             </div>
-          </div>
 
-          {/* Email Input */}
-          <div>
-            <p className='text-gray-500 text-lg lg:text-xl'>Email:</p>
-            <input
-              onChange={(e) => setEmail(e.target.value)}
-              type='email'
-              className='w-full h-10 text-slate-100 shadow-md rounded-lg p-2 border border-gray-300 outline-none'
-            />
-          </div>
-
-          {/* Password Input */}
-          <div>
-            <p className='text-gray-500 text-lg lg:text-xl'>Password:</p>
-            <input
-              onChange={(e) => setPassword(e.target.value)}
-              type='password'
-              className='w-full h-10 text-slate-100 shadow-md rounded-lg p-2 border border-gray-300 outline-none'
-            />
-          </div>
-
-          {/* Link and Button */}
-          <div className='flex flex-col items-center gap-2'>
-            <Link to='/login' className='text-purple-600 hover:underline'>
-              Already have an account? Login
-            </Link>
-            <button
-              onClick={create}
-              className='button w-1/2 h-10 bg-gradient-to-bl from-gray-950 via-indigo-950 to-rose-950 text-white font-bold rounded-lg shadow-md hover:bg-purple-600 transition-colors'
-            >
-              Sign Up
-            </button>
-          </div>
+            {/* Link and Button */}
+            <div className='flex flex-col items-center gap-2'>
+              <Link to='/login' className='text-purple-600 hover:underline'>
+                Already have an account? Login
+              </Link>
+              <button
+                type='submit'
+                className='button w-1/2 h-10 bg-gradient-to-bl from-gray-950 via-indigo-950 to-rose-950 text-white font-bold rounded-lg shadow-md hover:bg-purple-600 transition-colors'
+              >
+                Sign Up
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
